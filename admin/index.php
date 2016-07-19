@@ -1,3 +1,12 @@
+<?php 
+//copy this bit of php to all pages you want protected!!!
+session_start();
+if( !isset($_SESSION['user'])){
+    header('LOCATION: ../index.php');
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

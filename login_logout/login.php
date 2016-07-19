@@ -1,4 +1,5 @@
-<form action='server/check_user.php' method='post'>
+<!-- runs check_user.php when submitted-->
+  <form action='server/check_user.php' method='post'>
    
     <input type='text' name='user'>
     <input type='password' name='password'>
