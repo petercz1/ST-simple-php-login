@@ -1,10 +1,8 @@
 <?php 
 
-session_start();
-
+    session_start();
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,9 +22,7 @@ session_start();
            include('login_logout/login.php');
        }
        ?>
-      
-      
-      
+         
        IF (LOGGED IN) - SHOW LOGOUT STUFF
        ELSE SHOW LOGIN STUFF
    </header>
@@ -37,7 +33,9 @@ session_start();
         <li><a href="#">home</a></li>
         <li><a href="#">stuff</a></li>
         IF (LOGGED IN)
+        
         <li><a href="admin/">admin page</a></li>
+        
         END IF
     </ul>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, magni soluta vel dolores iste libero repellendus accusantium autem, laborum, ipsum dignissimos rerum aliquam ipsa animi quis! Rerum aut voluptatem maiores.</p>
