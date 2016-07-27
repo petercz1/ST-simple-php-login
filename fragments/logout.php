@@ -3,7 +3,7 @@
     Welcome <?php echo $_SESSION['user']; ?> - you are logged in
     
 <!--    runs reset.php-->
-    <form action="login_logout/reset.php">
+    <form action="<?php echo $_SESSION['webserver']; ?>fragments/reset.php">
        
         <input type="submit" value='logout'>
         

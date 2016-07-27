@@ -2,45 +2,26 @@
     // tells php to load session variable cookie
     session_start();
 
+// use if you want to run a php file
+$_SESSION['fileserver'] = $_SERVER["DOCUMENT_ROOT"] . "/login_demo/";
+
+// use if you want to link to external file eg css, js, img, favicon etc
+// echo it back to the html
+$_SESSION['webserver'] = "http://" . $_SERVER["SERVER_NAME"] . "/login_demo/";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>my super secure website</title>
-</head>
-<body>
-   <header>
-     
-      <?php      
-       // if user is set in session cookie, show logout page
-       // as you are logged in!!
-       if( isset($_SESSION['user'])   ){
-           include('login_logout/logout.php');
-       }
-       else{
-           // not logged in so show login html
-           include('login_logout/login.php');
-       }
-       ?>
-   </header>
-   
-    <h1>Welcome, losers</h1>
-    
-    <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="#">stuff</a></li>
-        
-        <?php 
-        //if user variable in session cookie is set, show <li> link
-        if(isset($_SESSION['user'])){  ?>
-               
-        <li><a href="admin/">admin page</a></li>
-    
-        <?php   } ?>
-        
-    </ul>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, magni soluta vel dolores iste libero repellendus accusantium autem, laborum, ipsum dignissimos rerum aliquam ipsa animi quis! Rerum aut voluptatem maiores.</p>
-</body>
-</html>
+<?php include ($_SESSION['fileserver'] . 'fragments/header.php'); ?>
+
+<h1>php full-stack demo with login</h1>
+
+<h2>DO BEFORE DEPLOY!</h2>
+<p>delete local folder path from fileserver and webserver session variables above</p>
+
+<h2>fileserver/webserver paths - for development</h2>
+<p>Fileserver:</p>
+<p> <?php echo $_SESSION['fileserver']; ?> </p>
+<p>Webserver:</p>
+<p> <?php echo $_SESSION['webserver']; ?> </p>
+
+<?php include ($_SESSION['fileserver'] . 'fragments/footer.php'); ?>
+
