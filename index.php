@@ -1,4 +1,4 @@
-<?php 
+<?php
     // tells php to load session variable cookie
     session_start();
 
@@ -10,7 +10,7 @@ $_SESSION['fileserver'] = $_SERVER["DOCUMENT_ROOT"] . "/login_demo/";
 $_SESSION['webserver'] = "http://" . $_SERVER["SERVER_NAME"] . "/login_demo/";
 ?>
 
-<?php include ($_SESSION['fileserver'] . 'fragments/header.php'); ?>
+<?php include($_SESSION['fileserver'] . 'fragments/header.php'); ?>
 
 <h1>php full-stack demo with login</h1>
 
@@ -23,5 +23,5 @@ $_SESSION['webserver'] = "http://" . $_SERVER["SERVER_NAME"] . "/login_demo/";
 <p>Webserver:</p>
 <p> <?php echo $_SESSION['webserver']; ?> </p>
 
-<?php include ($_SESSION['fileserver'] . 'fragments/footer.php'); ?>
+<?php include($_SESSION['fileserver'] . 'fragments/footer.php'); ?>
 
