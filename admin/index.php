@@ -7,6 +7,9 @@ if(!isset($_SESSION['user'])){
 include($_SESSION['fileserver'] . 'fragments/header.php'); ?>
 
 <script src="<?php echo $_SESSION['webserver']; ?>admin/js/user_select.js"></script>
+<script src="<?php echo $_SESSION['webserver']; ?>admin/js/user_add.js"></script>
+<script src="<?php echo $_SESSION['webserver']; ?>admin/js/user_delete.js"></script>
+<script src="<?php echo $_SESSION['webserver']; ?>admin/js/user_edit.js"></script>
 <script src="<?php echo $_SESSION['webserver']; ?>admin/js/javascript.js"></script>
 
 
@@ -29,4 +32,3 @@ include($_SESSION['fileserver'] . 'fragments/header.php'); ?>
 </div>
 
 <?php include($_SESSION['fileserver'] . 'fragments/footer.php'); ?>
-
