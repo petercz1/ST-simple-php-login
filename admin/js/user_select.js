@@ -21,7 +21,7 @@ function build_table(data) {
     var html_string = '<tr><th>user</th><th>email</th><th>role</th></tr>';
 
     for (var counter = 0; counter < json_data.length; counter++) {
-        html_string += '<tr>';
+        html_string += '<tr name="' + json_data[counter].id + '">';
 
         html_string += '<td>';
         html_string += json_data[counter].user;
@@ -45,7 +45,5 @@ function build_table(data) {
 
         html_string += '</tr>';
     }
-    console.log(html_string);
-
     $('#users').html(html_string);
 }

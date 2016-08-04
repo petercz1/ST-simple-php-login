@@ -10,12 +10,3 @@ function do_setup() {
 function failed() {
     console.log('something failed.... oh nooooo..');
 }
-
-function do_setup() {
-    console.log('loaded...');
-    $.post('user_select.php').done(user_select).fail(failed);
-}
-
-function failed() {
-    console.log('something failed');
-}

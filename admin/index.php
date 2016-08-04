@@ -25,7 +25,7 @@ include($_SESSION['fileserver'] . 'fragments/header.php'); ?>
 
 <div id='new_user_form'>
     <input type="text" id="user" placeholder="user name" value="bob">
-    <input type="text" id="email" placeholder="email" value="bob@bob.com">
+    <input type="email" id="email" placeholder="email">
     <input type="text" id="role" placeholder="role" value="admin">
     <input type="text" id="password" placeholder="password" value="bobby">
     <button id="user_add">add user</button>

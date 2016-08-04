@@ -1,23 +1,22 @@
 <?php 
 
 session_start();
-
 if(!isset($_SESSION['user'])){
      header('LOCATION: ' . $_SESSION['webserver'] . 'index.php');
 }
 
 include( $_SESSION['fileserver'] . 'server/connection.php');
 
-$get_users = 'SELECT * FROM users ORDER BY email';
+$id = $_POST['id'];
 
-$conn_statement = $conn->prepare($get_users);
+$delete_user = 'DELETE FROM users where id = ?';
+
+$conn_statement = $conn->prepare($delete_user);
+
+$conn_statement->bind_param('i', $id);
+
 $conn_statement->execute();
 
-$result = $conn_statement->get_result();
 $conn_statement->close();
 
-while($row = $result->fetch_assoc()){
-    $output[] = $row;
-}
-
-echo json_encode($output);
+echo 'delete';
