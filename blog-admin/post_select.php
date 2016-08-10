@@ -12,11 +12,11 @@ if(!isset($_SESSION['user'])){
 include( $_SESSION['fileserver'] . 'server/connection.php');
 
 // simple SQL statement to grab all users sorted by email
-$get_users = 'SELECT * FROM users ORDER BY email';
+$get_posts = 'SELECT * FROM posts ORDER BY post_date DESC';
 
 // stuff that stops SQL injection!
 // prepare statement
-$conn_statement = $conn->prepare($get_users);
+$conn_statement = $conn->prepare($get_posts);
 // fire it off
 $conn_statement->execute();
 

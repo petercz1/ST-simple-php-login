@@ -1,11 +1,19 @@
 <?php 
-session_start();
-if(!isset($_SESSION['user'])){
-    header('LOCATION: ' . $_SESSION['webserver'] . 'index.php');
-}
 
-include($_SESSION['fileserver'] . 'fragments/header.php'); ?>
+    // makes the server php session array available
+    session_start();
 
+    // checks if user is set in session array, if not redirects to homepage
+    if(!isset($_SESSION['user'])){
+        header('LOCATION: ' . $_SESSION['webserver'] . 'index.php');
+    }
+
+    // includes AND runs the header fragment
+    include($_SESSION['fileserver'] . 'fragments/header.php'); 
+
+?>
+
+<!--includes all the ADMIN js-->
 <script src="<?php echo $_SESSION['webserver']; ?>admin/js/user_select.js"></script>
 <script src="<?php echo $_SESSION['webserver']; ?>admin/js/user_add.js"></script>
 <script src="<?php echo $_SESSION['webserver']; ?>admin/js/user_delete.js"></script>
@@ -31,4 +39,5 @@ include($_SESSION['fileserver'] . 'fragments/header.php'); ?>
     <button id="user_add">add user</button>
 </div>
 
+<!--includes AND runs the footer php-->
 <?php include($_SESSION['fileserver'] . 'fragments/footer.php'); ?>

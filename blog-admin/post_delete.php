@@ -15,11 +15,11 @@ include( $_SESSION['fileserver'] . 'server/connection.php');
 $id = $_POST['id'];
 
 // SQL statement to DELETE user with specific id
-$delete_user = 'DELETE FROM users where id = ?';
+$delete_post = 'DELETE FROM posts where id = ?';
 
 // stuff that stops SQL injection!
 // prepare statement with 'hole' ready for id variable where the question mark is
-$conn_statement = $conn->prepare($delete_user);
+$conn_statement = $conn->prepare($delete_post);
 
 // scrubs the $id variable, makes sure it is an integer, puts it into the prepared statement
 $conn_statement->bind_param('i', $id);

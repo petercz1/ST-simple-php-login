@@ -7,6 +7,8 @@
 
     <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
 
+    <script src="<?php echo $_SESSION['webserver']; ?>js/date.js"></script>
+
 </head>
 
 <body>
@@ -32,7 +34,9 @@
         //if user variable in session cookie is set, show <li> link
         if (isset($_SESSION['user'])) {  ?>
 
-            <li><a href="<?php echo $_SESSION['webserver']; ?>admin/">admin page</a></li>
+            <li><a href="<?php echo $_SESSION['webserver']; ?>admin/">user admin</a></li>
+            <li><a href="<?php echo $_SESSION['webserver']; ?>blog-admin/">blog admin</a></li>
+
             <?php } ?>
 
     </ul>

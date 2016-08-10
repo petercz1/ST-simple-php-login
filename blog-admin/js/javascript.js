@@ -6,10 +6,10 @@ $(document).ready(do_setup);
 
 function do_setup() {
     console.log('running setup!');
-    // AJAX: sends a request to user_select.php
-    // when php responds it runs user_select
+    // AJAX: sends a request to blog_select.php
+    // when php responds it runs blog_select.js
     // (or blows up and runs failed!)
-    $.post('user_select.php').done(user_select).fail(failed);
+    $.post('post_select.php').done(post_select).fail(failed);
 }
 
 function failed() {
